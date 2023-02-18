@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->rememberToken();
-            $table->text("comment")->default("こんにちは!");
+            $table->text("comment");
             $table->timestamps();
             $table->boolean("delete_flag")->default(false);
         });
