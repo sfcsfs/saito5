@@ -15,13 +15,17 @@ class EditFinishController extends Controller
         $email = $request -> input('edit_email');
         //$works_id = $request -> input('edit_works_id');
         $comment = $request -> input('edit_comment');
-        $flag = $request -> input('edit_flag');
+        //$flag = $request -> input('edit_flag');
+        $seibetu = $request -> input('e');
+        $nennrei = $request -> input('ed');
         $edit_data = User::where('id', $id) -> update([
             'name' => $name,
             'email' => $email,
             //'works_id' => $works_id,
             'comment' => $comment,
-            'delete_flag' => $flag
+            //'delete_flag' => $flag
+            '性別' => $seibetu,
+            '年齢' => $nennrei,
         ]);
         $User_data = User::where('id', $id) -> first();
         return view('user/edit_finish',['data' => $User_data]);

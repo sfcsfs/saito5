@@ -23,12 +23,19 @@
                                     <th>ID</th>
                                     <th>NAME</th>
                                     <th>COMMENT</th>
+                                    <th>性別</th>
+                                    <th>年齢</th>
                                     <th>回答の一致数(相性度)</th>
                                     
                                 </tr>
                                 @foreach($UUser as $Data)
                                 <tr>
+
+                                
+
+
                                 @php
+                                    $rrr = "";
                                     $tt = $My_data['はいなら0いいえなら1　左からスタート現在8個'];
                                     $cc = $Data['はいなら0いいえなら1　左からスタート現在8個'];
                                     $kazu= mb_strlen($cc);
@@ -43,15 +50,25 @@
                                         }
                                     }
                                     
-                                    
-                    
-                                    
+                                    if ($Suuzi > $yyy){
+                                        $rrr = "対象外";
+                                    }
+                                   
                                     @endphp
+
+
+
+
+                                   
                                     
-                                    <td>{{ $Data['id'] }}</td>
-                                    <td>{{ $Data['name'] }}</td>
-                                    <td>{{ $Data['comment'] }}</td>
+                                    <td>{{ $Data['id'] }}&emsp;</td>
+                                    <td>{{ $Data['name'] }}&emsp;</td>
+                                    <td>{{ $Data['comment'] }}&emsp;</td>
+                                    <td>{{ $Data['性別'] }}&emsp;</td>
+                                    <td>{{ $Data['年齢'] }}&emsp;</td>
                                     <td>{{ $yyy }}</td>
+                                    <td><b>{{ $rrr }}</b></td>
+                                    
 
                                     
                                 </tr>

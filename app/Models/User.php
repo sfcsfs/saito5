@@ -24,7 +24,8 @@ class User extends Authenticatable
         'password',
     ];
 
-    public function kaitous(){
+    public function kaitous()
+    {
         return $this->hasMany(Kaitou::class);
     }
 

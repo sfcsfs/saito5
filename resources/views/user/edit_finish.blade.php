@@ -10,9 +10,9 @@
                 </div>
                 <div class="card-body">
                     @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
+                    <div class="alert alert-success" role="alert">
+                        {{ session('status') }}
+                    </div>
                     @endif
                     <div class="edit_table">
                         <table>
@@ -24,7 +24,8 @@
                                 <th>COMMENT</th>
                                 <th>CREATED_AT</th>
                                 <th>UPDATED_AT</th>
-                                <th>DELETE_FLAG(0=表示, 1=非表示)</th>
+                                <th>性別</th>
+                                <th>年齢</th>
                             </tr>
                             <tr>
                                 <td>{{ $data['id'] }}</td>
@@ -34,8 +35,9 @@
                                 <td>{{ $data['comment'] }}</td>
                                 <td>{{ $data['created_at'] }}</td>
                                 <td>{{ $data['updated_at'] }}</td>
-                                <td>{{ $data['delete_flag'] }}</td>
-                            </tr>    
+                                <td>{{ $data['性別'] }}</td>
+                                <td>{{ $data['年齢'] }}</td>
+                            </tr>
                         </table>
                     </div>
                     <div>
@@ -46,5 +48,5 @@
         </div>
     </div>
 </div>
-    
+
 @endsection

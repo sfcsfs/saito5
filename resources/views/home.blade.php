@@ -5,7 +5,7 @@
     @guest
         Laravel
     @else
-        Hello, {{ Auth::user()->name }} !!
+        ようこそ！素敵な出会いを見つけてください！{{ Auth::user()->name }} !!
     @endguest
 </div>
 <div class="card-body">

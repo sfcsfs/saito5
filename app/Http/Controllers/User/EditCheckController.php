@@ -10,13 +10,15 @@ class EditCheckController extends Controller
 {
     public function check(Request $request)
     {
-        $id = $request -> input('edit_id');
-        $name = $request -> input('edit_name');
-        $email = $request -> input('edit_email');
+        $id = $request->input('edit_id');
+        $name = $request->input('edit_name');
+        $email = $request->input('edit_email');
         //$works_id = $request -> input('edit_works_id');
-        $comment = $request -> input('edit_comment');
-        $flag = $request -> input('edit_flag');
-        $edit_database = User::where('id', $id) -> first();
+        $comment = $request->input('edit_comment');
+        $seibetu = $request->input('e');
+        $nennrei = $request->input('ed');
+        //$flag = $request -> input('edit_flag');
+        $edit_database = User::where('id', $id)->first();
         $edit_data = array(
             'id' => $id,
             'name' => $name,
@@ -25,8 +27,11 @@ class EditCheckController extends Controller
             'comment' => $comment,
             'created_at' => $edit_database['created_at'],
             'updated_at' => $edit_database['updated_at'],
-            'delete_flag' => $flag
+
+            'e' => $seibetu,
+            'ed' => $nennrei,
+            //'delete_flag' => $flag
         );
-        return view('user/edit_check',['data' => $edit_data]);
+        return view('user/edit_check', ['data' => $edit_data]);
     }
 }
