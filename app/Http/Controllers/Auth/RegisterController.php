@@ -9,7 +9,7 @@ namespace App\Http\Controllers\Auth;
 //use Illuminate\Support\Facades\Hash;
 //use Illuminate\Support\Facades\Validator;
 
-//class RegisterController extends Controller
+//class RegisterController extends Controller 現在登録機能休止中
 {
     /*
     |--------------------------------------------------------------------------
