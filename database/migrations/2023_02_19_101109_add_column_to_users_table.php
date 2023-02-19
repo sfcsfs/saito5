@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string("comment")->default("こんにちは！!");
             $table->string("はいなら0いいえなら1　左からスタート現在8個")->default("00000000");
             $table->string("性別")->default("性別不詳");
-            $table->integer("年齢");
+            $table->integer("年齢")->default("20");;
             $table->timestamps();
             $table->boolean("delete_flag")->default(false);
         });
