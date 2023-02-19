@@ -35,8 +35,18 @@ class KController extends Controller
 
     public function k2(Request $request)
     {
-        $kaitou = new Kaitou;
+        
+        
         $form = $request->all();
+       
+        
+
+        $kaitou = new Kaitou;
+        if ($kaitou->id > 8){
+            return redirect("/home/edit");
+
+        }
+        
         unset($form["_token"]);
         $kaitou->fill($form)->save();
         return redirect("/home/edit");

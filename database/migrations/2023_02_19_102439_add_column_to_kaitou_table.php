@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('kaitou', function (Blueprint $table) {
             $table->increments("id");
-            $table->string("text")->default("ここに質問を追加します");
+            $table->string("text");
             $table->integer("はい")->default("1");
             $table->integer("いいえ")->default("0");
             $table->integer("どうしても答えられない・答えたくない")->default("0");
