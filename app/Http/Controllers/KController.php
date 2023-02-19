@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Kaitou;
 
 class KController extends Controller
 {
@@ -30,5 +31,15 @@ class KController extends Controller
         $User_data->はいなら0いいえなら1　左からスタート現在8個 = $hh;
         $User_data->save();
         return redirect()->route('edit');
+    }
+
+    public function k2(Request $request)
+    {
+        $kaitou = new Kaitou;
+        $form = $request->all();
+        unset($form["_token"]);
+        $kaitou->fill($form)->save();
+        return redirect("/home/edit");
+
     }
 }

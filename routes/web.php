@@ -24,6 +24,7 @@ Route::get('/home/result',[App\Http\Controllers\User\SearchController::class,'se
 Route::post('/home/result',[App\Http\Controllers\User\ResultController::class,'result']);
 Route::post('/home/search',[App\Http\Controllers\User\SearchController::class,'return_search']);
 Route::post('/home/k',[App\Http\Controllers\KController::class,'k']);
+Route::post('/home/k2',[App\Http\Controllers\KController::class,'k2']); //問いを追加するためにテスト用として作成
 
 Route::get('/', function () {
     return view('welcome');

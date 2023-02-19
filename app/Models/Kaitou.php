@@ -10,7 +10,7 @@ class Kaitou extends Model
 {
     use HasFactory;
     protected $table = 'kaitou';
-
+    protected $fillable = ['text','はい','いいえ','どうしても答えられない・答えたくない'];
     public function getData()
     {
         return $this->text;

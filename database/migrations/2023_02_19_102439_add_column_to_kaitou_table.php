@@ -13,15 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
-            $table->id();
-            $table->string('name')->unique();
-            $table->string('email')->unique();
-            $table->string('password');
-            $table->rememberToken();
-            $table->text("comment");
+        Schema::create('kaitou', function (Blueprint $table) {
+            $table->increments("id");
+            $table->string("text")->default("ここに質問を追加します");
+            $table->integer("はい")->default("1");
+            $table->integer("いいえ")->default("0");
+            $table->integer("どうしても答えられない・答えたくない")->default("0");
             $table->timestamps();
-            $table->boolean("delete_flag")->default(false);
         });
     }
 
@@ -32,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('kaitou');
     }
 };

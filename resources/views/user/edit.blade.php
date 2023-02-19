@@ -97,6 +97,19 @@
                     </form>
                     <br>
                     <input type="button" value="戻る" onclick="history.back()">
+
+
+                    <form method="post" action="k2">
+                    
+                    
+                    @csrf
+                    <input type="hidden" value="ここに問題を追加していきます" name="text">
+                    <input type="hidden" value="1" name="はい">
+                    <input type="hidden" value="0" name="いいえ">
+                    <input type="hidden" value="0" name="どうしても答えられない・答えたくない">
+                    <input type="submit" value="ここを押すととりあえず問を作成">
+                    </form>
+                        
                 </div>
             </div>
         </div>
