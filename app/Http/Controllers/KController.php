@@ -33,6 +33,9 @@ class KController extends Controller
         return redirect()->route('edit');
     }
 
+
+
+    /*
     public function k2(Request $request)
     {
         
@@ -49,7 +52,7 @@ class KController extends Controller
         
         unset($form["_token"]);
         $kaitou->fill($form)->save();
-        return redirect("/home/edit");
+        return redirect("/home/edit");  //現在は問題を増やすボタンは押せないように
 
-    }
+    }*/
 }

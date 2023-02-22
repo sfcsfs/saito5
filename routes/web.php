@@ -27,7 +27,7 @@ Route::post('/home/k',[App\Http\Controllers\KController::class,'k']);
 Route::post('/home/k2',[App\Http\Controllers\KController::class,'k2']); //問いを追加するためにテスト用として作成
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Route::get('/fff', function () {

@@ -50,7 +50,7 @@
                     </div>
                     <br>
                     <br>
-                    <h1>回答の変更したい箇所にチェックをしてください</h1>
+                    <h1>回答の変更したい箇所にチェックをしてください（現在８個目の質問まで）</h1>
                     <!--$cにAuthのユーザーの回答すべてを代入-->
                     <!--$dに$cの回答の現在の番号を代入そして$eでそこの部分の回答取り出し $fはラジオボタンのvalue-->
                     @foreach ($items as $a)
@@ -107,7 +107,7 @@
                     <input type="hidden" value="1" name="はい">
                     <input type="hidden" value="0" name="いいえ">
                     <input type="hidden" value="0" name="どうしても答えられない・答えたくない">
-                    <input type="submit" value="ここを押すととりあえず問を作成">
+                    <input type="submit" value="ここを押すととりあえず問を作成(現在押せない状態)"disabled="disabled">
                     </form>
                         
                 </div>
