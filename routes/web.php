@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::group(['middleware' => 'auth'], function() {
 Route::get('/home/edit',[App\Http\Controllers\User\EditController::class,"edit"]);
 Route::post('/home/edit',[App\Http\Controllers\User\EditController::class,"return_check"])->name('edit');;
 Route::get('/home/edit_check',[App\Http\Controllers\User\EditController::class,'edit']);
@@ -25,6 +25,7 @@ Route::post('/home/result',[App\Http\Controllers\User\ResultController::class,'r
 Route::post('/home/search',[App\Http\Controllers\User\SearchController::class,'return_search']);
 Route::post('/home/k',[App\Http\Controllers\KController::class,'k']);
 Route::post('/home/k2',[App\Http\Controllers\KController::class,'k2']); //問いを追加するためにテスト用として作成
+});
 
 Route::get('/', function () {
     return view('home');
@@ -37,13 +38,15 @@ Route::get('/fff', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', function () {
+    return view('home');
+});
 
-Auth::routes();
+//Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Auth::routes();
+//Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
