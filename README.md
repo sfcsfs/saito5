@@ -22,3 +22,5 @@ database/migrations/2023_02_19_102439_add_column_to_kaitou_table.php = 質問の
 tests/Feature/ExampleTest.php = テストプログラム。Featureの方。httpステータスコードが想定通りか、非ログイン時にログイン必須のページにアクセスしたときログイン画面に遷移されるか、POSTメソッドに対してGETメソッドを行ったとき弾かれるかの確認。  
 
 app/Http/Controllers/ = 各種コントローラーが存在するが認証機能やDBからのデータの取得や検索・保存、ページの遷移等を担っている。加えて、ラジオボタンの形式そのままに質問の回答をDBに保存できないと思われるためデータを加工するためにKController.phpを作成。  
+
+#　ログインのためのアカウントはpaizaの方に掲載。
