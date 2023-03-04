@@ -6,7 +6,7 @@
 
 ## 使用技術　
 ・PHP 8.2.0
-・Laravel 9.48.0
+・Laravel 8
 ・JAWSDB
 ・Heroku
 
