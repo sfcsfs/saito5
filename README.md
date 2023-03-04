@@ -1,66 +1,26 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# タイトル：マッチングアプリ
+複数の質問に答えることで登録されたユーザー同士の質問の回答一致数が確認可能なサイト。それによって自分にあった人とマッチングできる・・・かもしれない。
+![image](https://user-images.githubusercontent.com/105050060/220828983-6cbe5115-ef10-42a2-a5a2-6155b38ab715.png)
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## URL: https://arcane-ocean-35939.herokuapp.com
 
-## About Laravel
+## 使用技術　
+・PHP 8.2.0
+・Laravel 8
+・JAWSDB
+・Heroku
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 構造
+resources/views/home.blade.php = ホーム画面。未ログイン時はログインが、ログイン時はログアウトおよび登録情報編集ページと他のユーザー検索ページへと遷移可能。  
+resources/views/user/edit.blade.php = 登録情報編集が可能なページ。edit_check.blade.phpは変更したい登録情報に間違いないか確認するための画面、edit_finish.blade.phpは登録情報の変更が完了したことを伝える画面。  
+resources/views/user/search.blade.php = 他のユーザーを検索できる画面。検索条件も設定可能。  
+resources/views/user/result.blade.php = 検索結果を表示する画面。自らが設定した回答一致数未満の相手の場合は対象外と表示される。  
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+database/migrations/2023_02_19_101109_add_column_to_users_table.php  = ユーザー情報のカラムの設定ファイル。app/Models/User.phpと連携。  
+database/migrations/2023_02_19_102439_add_column_to_kaitou_table.php = 質問のカラムの設定ファイル。app/Models/Kaitou.phpと連携。  
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+tests/Feature/ExampleTest.php = テストプログラム。Featureの方。httpステータスコードが想定通りか、非ログイン時にログイン必須のページにアクセスしたときログイン画面に遷移されるか、POSTメソッドに対してGETメソッドを行ったとき弾かれるかの確認。  
 
-## Learning Laravel
+app/Http/Controllers/ = 各種コントローラーが存在するが認証機能やDBからのデータの取得や検索・保存、ページの遷移等を担っている。加えて、ラジオボタンの形式そのままに質問の回答をDBに保存できないと思われるためデータを加工するためにKController.phpを作成。  
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+# ログインのためのアカウントはpaizaの方に掲載しました!
