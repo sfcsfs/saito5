@@ -8,17 +8,17 @@ use App\Models\User;
 
 class EditFinishController extends Controller
 {
-     public function finish(Request $request)
+    public function finish(Request $request)
     {
-        $id = $request -> input('edit_id');
-        $name = $request -> input('edit_name');
-        $email = $request -> input('edit_email');
+        $id = $request->input('edit_id');
+        $name = $request->input('edit_name');
+        $email = $request->input('edit_email');
         //$works_id = $request -> input('edit_works_id');
-        $comment = $request -> input('edit_comment');
+        $comment = $request->input('edit_comment');
         //$flag = $request -> input('edit_flag');
-        $seibetu = $request -> input('e');
-        $nennrei = $request -> input('ed');
-        $edit_data = User::where('id', $id) -> update([
+        $seibetu = $request->input('e');
+        $nennrei = $request->input('ed');
+        $edit_data = User::where('id', $id)->update([
             'name' => $name,
             'email' => $email,
             //'works_id' => $works_id,
@@ -27,7 +27,7 @@ class EditFinishController extends Controller
             '性別' => $seibetu,
             '年齢' => $nennrei,
         ]);
-        $User_data = User::where('id', $id) -> first();
-        return view('user/edit_finish',['data' => $User_data]);
+        $User_data = User::where('id', $id)->first();
+        return view('user/edit_finish', ['data' => $User_data]);
     }
 }

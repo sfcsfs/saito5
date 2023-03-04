@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\Kaitou;
+use Illuminate\Pagination\Paginator;
 
 
 
@@ -16,8 +17,12 @@ class EditController extends Controller
     {
         $Auth_data = Auth::id();
         $User_data = User::where('id', $Auth_data)->first();
-        $items = Kaitou::with("user")->get();
-        return view('user/edit', ['User' => $User_data, "items" => $items]);
+        //$items = Kaitou::with("user")->get();
+        $items = Kaitou::paginate(8); //セッションを使えばよりうまくできるか
+
+        
+        return view('user/edit', ['User' => $User_data, "items" => $items,
+        ]);
     }
     public function return_check(Request $request)
     {

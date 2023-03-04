@@ -16,7 +16,8 @@ class KController extends Controller
         $hh = 0;
         $Auth_data = Auth::id();
         $User_data = User::where('id', $Auth_data)->first(); #ログインしている人の情報を取得
-        $r = mb_strlen($User_data->はいなら0いいえなら1　左からスタート現在8個); #回答の数を取得
+        //$r = mb_strlen($User_data->はいなら0いいえなら1　左からスタート現在8個);#回答の数を取得
+        $r = 8; #回答の数を取得 こちらは直接指定
         for ($y = 1; $y < $r + 1; $y++) {
             $d = $request->input("$y");
             $g = substr($d, 5, 1); #$dの必要なところだけ取り出し
