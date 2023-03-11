@@ -23,4 +23,4 @@ tests/Feature/ExampleTest.php = テストプログラム。Featureの方。http�
 
 app/Http/Controllers/ = 各種コントローラーが存在するが認証機能やDBからのデータの取得や検索・保存、ページの遷移等を担っている。加えて、ラジオボタンの形式そのままに質問の回答をDBに保存できないと思われるためデータを加工するためにKController.phpを作成。  
 
-# ログインのためのアカウントはpaizaの方に掲載しました!
+# ログインのためのアカウントはpaizaの方に掲載しています!
