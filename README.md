@@ -1,5 +1,4 @@
-# タイトル：マッチングアプリ
-複数の質問に答えることで登録されたユーザー同士の質問の回答一致数が確認可能なサイト。それによって自分にあった人とマッチングできる・・・かもしれない。
+
 ![image](https://user-images.githubusercontent.com/105050060/220828983-6cbe5115-ef10-42a2-a5a2-6155b38ab715.png)
 
 ## URL: https://arcane-ocean-35939.herokuapp.com
